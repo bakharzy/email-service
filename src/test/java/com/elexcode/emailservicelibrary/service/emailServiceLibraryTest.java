@@ -45,7 +45,7 @@ public class emailServiceLibraryTest {
     private String host= "smtp.gmail.com";
     private int port = 587; 
     private String username = "elexcode@gmail.com";
-    private String password = "noPass";
+    private String password = "elex2015";
 
     public emailServiceLibraryTest() {
         
@@ -114,7 +114,8 @@ public class emailServiceLibraryTest {
         EmailObject emailObject = createDummyEmailObject();
         emailObject.setHtmlMsg(htmlMsg);
         emailObject.setSubject("HTML Test" + System.currentTimeMillis());
-        emailService.sendEmail(emailObject, host, port,username,password );
+        emailService.setEmailConfiguration(host, port, username, password);
+        emailService.sendEmail(emailObject);
     }
 
     @Test
@@ -128,7 +129,8 @@ public class emailServiceLibraryTest {
         EmailObject obj = emailObjectBuilder.createEmailObject(recipients, "Integrated test at " + System.currentTimeMillis(), html);
         assertEquals(1, obj.getRecipients().length);
         assertEquals("amargir666@gmail.com", obj.getRecipients()[0]);
-        emailService.sendEmail(obj, host, port,username,password );
+        emailService.setEmailConfiguration(host, port, username, password);
+        emailService.sendEmail(obj);
     }
 
     public EmailObject createDummyEmailObject() {

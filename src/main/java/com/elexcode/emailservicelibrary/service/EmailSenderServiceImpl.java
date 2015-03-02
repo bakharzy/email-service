@@ -18,12 +18,16 @@ import org.springframework.stereotype.Service;
 public class EmailSenderServiceImpl implements EmailSenderService {
 
     private final HtmlEmail email = new HtmlEmail();
+    private String host;
+    private int port;
+    private String username;
+    private String password;
 
     public EmailSenderServiceImpl() {
     }
 
     @Override
-    public void sendEmail(EmailObject emailObject, String host, int port, String username, String password) throws Exception {
+    public void sendEmail(EmailObject emailObject) throws Exception {
         email.setHostName(host);
         email.setSmtpPort(port);
         email.setAuthentication(username, password);
@@ -45,12 +49,21 @@ public class EmailSenderServiceImpl implements EmailSenderService {
         email.send();
     }
 
-    private boolean checkStringNotNullNotEmpty(String str) {
+   
+    @Override
+    public void setEmailConfiguration(String host, int port, String username, String password){
+        this.host = host;
+        this.port = port;
+        this.username = username;
+        this.password = password;
+        
+    }
+    
+     private boolean checkStringNotNullNotEmpty(String str) {
         if (str == null || str.isEmpty()) {
             return false;
         }
         return true;
     }
 
-    
 }

@@ -15,6 +15,8 @@ import com.elexcode.emailservicelibrary.entity.EmailObject;
 
 public interface EmailSenderService {
 
-    public void sendEmail(EmailObject emailObject, String host, int port, String username, String password) throws Exception;
+    public void sendEmail(EmailObject emailObject) throws Exception;
+    
+    public void setEmailConfiguration(String host, int port, String username, String password);
 
 }
