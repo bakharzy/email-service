@@ -32,8 +32,6 @@ public class EmailTemplateBuilder {
 
         this.config = new Configuration(VERSION_1);
         
-        
-
         this.template = config.getTemplate(htmlTemplate);
 
     }

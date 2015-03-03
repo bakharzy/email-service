@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailSenderServiceImpl implements EmailSenderService {
 
-    private final HtmlEmail email = new HtmlEmail();
+    
     private String host;
     private int port;
     private String username;
@@ -28,6 +28,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
     @Override
     public void sendEmail(EmailObject emailObject) throws Exception {
+        HtmlEmail email = new HtmlEmail();
         email.setHostName(host);
         email.setSmtpPort(port);
         email.setAuthentication(username, password);

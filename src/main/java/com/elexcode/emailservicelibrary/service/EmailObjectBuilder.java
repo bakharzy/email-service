@@ -13,16 +13,14 @@ import com.elexcode.emailservicelibrary.entity.EmailObject;
  */
 public class EmailObjectBuilder {
     
-    EmailObject emailObject;
+    
     
     public EmailObjectBuilder() {
         
-        this.emailObject = new EmailObject();
-               
     }
     
     public EmailObject createEmailObject(String[] recipients, String subject, String htmlMsg){
-        
+        EmailObject emailObject = new EmailObject();
         emailObject.setRecipients(recipients);
         emailObject.setSubject(subject);
         emailObject.setHtmlMsg(htmlMsg);
