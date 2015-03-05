@@ -16,9 +16,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  *
  * @author mohi
  */
-@Configuration
-@PropertySource("classpath:com/elexcode/emailservicelibrary/service/emailCredentials.properties")
-@ComponentScan(basePackages = "com.elexcode.emailservicelibrary.service")
+//@Configuration
+//@PropertySource("classpath:com/elexcode/emailservicelibrary/service/emailCredentials.properties")
+//@ComponentScan(basePackages = "com.elexcode.emailservicelibrary.service")
 public class EmailConfiguration {
 
     @Value("${google.host}")
