@@ -124,9 +124,9 @@ public class emailServiceLibraryTest {
         data2.put("name", "mohi");
         data2.put("title", "Integrated test Title in H1 tag!");
         String html = emailTemplateBuilder.getHtmlTemplate(data2);
-        String[] recipients = {"amargir666@gmail.com", "sad@sad.com"};
+        String[] recipients = {"amargir666@gmail.com"};
         EmailObject obj = emailObjectBuilder.createEmailObject(recipients, "Integrated test at " + System.currentTimeMillis(), html);
-        assertEquals(2, obj.getRecipients().length);
+        assertEquals(1, obj.getRecipients().length);
         assertEquals("amargir666@gmail.com", obj.getRecipients()[0]);
         emailService.setEmailConfiguration(host, port, username, password);
         emailService.sendEmail(obj);
@@ -135,7 +135,7 @@ public class emailServiceLibraryTest {
     public EmailObject createDummyEmailObject() {
         EmailObject emailObject = new EmailObject();
         emailObject.setFrom("elexcode@gmail.com");
-        String[] recipients = {"mohammad.bakharzy@kone.com", "amargir666@gmail.com"};
+        String[] recipients = {"amargir666@gmail.com"};
         emailObject.setRecipients(recipients);
         emailObject.setMessage("Hi! \n This is a message");
         return emailObject;
