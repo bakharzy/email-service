@@ -39,9 +39,11 @@ public class EmailTemplateBuilder {
     public String getHtmlTemplate(Map data) throws IOException, TemplateException {
 
         Writer writer = new StringWriter();
-        writer.flush();
         template.process(data, writer);
-        return writer.toString();
+        String htmlContent = writer.toString();
+        writer.flush();
+        writer.close();
+        return htmlContent;
 
     }
 
