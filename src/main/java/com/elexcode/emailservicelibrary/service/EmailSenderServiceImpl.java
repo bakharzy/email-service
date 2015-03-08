@@ -19,7 +19,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
     
     private String host;
-    private int port;
+    private int port;   
     private String username;
     private String password;
 
