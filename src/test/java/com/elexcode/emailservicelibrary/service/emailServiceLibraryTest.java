@@ -135,7 +135,7 @@ public class emailServiceLibraryTest {
     public EmailObject createDummyEmailObject() {
         EmailObject emailObject = new EmailObject();
         emailObject.setFrom("elexcode@gmail.com");
-        String[] recipients = {"mohammad.bakharzy@kone.com", "amargir666@gmail.com"};
+        String[] recipients = {"amargir666@gmail.com"};
         emailObject.setRecipients(recipients);
         emailObject.setMessage("Hi! \n This is a message");
         return emailObject;
