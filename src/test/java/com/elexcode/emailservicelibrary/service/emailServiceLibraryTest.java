@@ -42,7 +42,7 @@ public class emailServiceLibraryTest {
     private String htmlMsg;
     
     private String host= "smtp.gmail.com";
-    private int port = 587; 
+    private int port = 465; 
     private String username = "elexcode@gmail.com";
     private String password = "elex2015";
 
