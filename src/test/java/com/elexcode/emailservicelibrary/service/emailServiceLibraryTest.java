@@ -108,6 +108,7 @@ public class emailServiceLibraryTest {
     }
 
     @Test
+    @Ignore
     public void testEmailSenderService() throws Exception {
         System.out.println("Send One HTML Email Test");
         EmailObject emailObject = createDummyEmailObject();
@@ -118,6 +119,7 @@ public class emailServiceLibraryTest {
     }
 
     @Test
+    @Ignore
     public void testSendEmailIntegrated() throws IOException, TemplateException, Exception {
         System.out.println("Send Email Integrated Test");
         Map<String, String> data2 = new HashMap<String, String>();
